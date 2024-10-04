@@ -22,7 +22,7 @@ pipeline {
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
                 # Run pytest
 
-                python3 -m venv.env
+                python3 -m venv .env
                 sourve .env/bin/activate && pip install pytest numpy pandas scikit-learn
                 # pytest --maxfail=1 --disable-warnings
                 #echo 'pytest not runned'
