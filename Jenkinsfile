@@ -24,7 +24,7 @@ pipeline {
 
                 python3 -m venv .env
                 source .env/bin/activate && pip install pytest numpy pandas scikit-learn
-                # pytest --maxfail=1 --disable-warnings
+                pytest --maxfail=1 --disable-warnings
                 #echo 'pytest not runned'
                 #exit 1 #comment this line after implementing Jenkinsfile
                 echo 'pytest completed'
