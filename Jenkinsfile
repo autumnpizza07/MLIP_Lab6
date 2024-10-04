@@ -17,11 +17,14 @@ pipeline {
                 # TODO fill out the path to conda here
                 # sudo /PATH/TO/CONDA init
                 # Activate Conda environment
-                source ~/miniconda3/bin/activate mlip
+                # source ~/miniconda3/bin/activate mlip
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
                 # Run pytest
-                pytest --maxfail=1 --disable-warnings
+
+                python3 -m venv.env
+                sourve .env/bin/activate && pip install pytest numpy pandas scikit-learn
+                # pytest --maxfail=1 --disable-warnings
                 #echo 'pytest not runned'
                 #exit 1 #comment this line after implementing Jenkinsfile
                 echo 'pytest completed'
