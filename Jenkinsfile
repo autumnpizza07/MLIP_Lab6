@@ -19,7 +19,16 @@ pipeline {
                 # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate init
 
                 # TODO Complete the command to run pytest
-                # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate run -n <Envinronment Name> <Command you want to run>
+                # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate run -n mlip_lab6 pytest
+
+                # Activate the Python virtual environment
+                source /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate
+
+                # Run pytest
+                pytest
+
+                # Deactivate the virtual environment
+                deactivate
 
                 echo 'pytest not runned'
                 exit 1 #comment this line after implementing Jenkinsfile
