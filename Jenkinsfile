@@ -22,7 +22,7 @@ pipeline {
                 # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate run -n mlip_lab6 pytest
 
                 # Activate the Python virtual environment
-                source /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate
+                sudo source /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate
 
                 # Run pytest
                 pytest
