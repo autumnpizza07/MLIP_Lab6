@@ -14,24 +14,17 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                 echo 'Test Step: We run testing tool like pytest here'
-
                 # TODO fill out the path to conda here
-                # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate init
-
+                # sudo /PATH/TO/CONDA init
+                # Activate Conda environment
+                source ~/miniconda3/bin/activate mlip
                 # TODO Complete the command to run pytest
-                # sudo /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate run -n mlip_lab6 pytest
-
-                # Activate the Python virtual environment
-                sudo source /home/rsonawan/MLIP_Lab6/mlip_lab6/bin/activate
-
+                # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
                 # Run pytest
-                pytest
-
-                # Deactivate the virtual environment
-                deactivate
-
-                echo 'pytest not runned'
-                exit 1 #comment this line after implementing Jenkinsfile
+                pytest --maxfail=1 --disable-warnings
+                #echo 'pytest not runned'
+                #exit 1 #comment this line after implementing Jenkinsfile
+                echo 'pytest completed'
                 '''
 
             }
